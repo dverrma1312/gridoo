@@ -3,6 +3,6 @@
     "builder": "NIXPACKS"
   },
   "deploy": {
-    "startCommand": "daphne -b 0.0.0.0 -p $PORT gridoo.asgi:application"
+    "startCommand": "python manage.py collectstatic --noinput && python manage.py migrate && python manage.py seed_grid && daphne -b 0.0.0.0 -p $PORT gridoo.asgi:application"
   }
 }

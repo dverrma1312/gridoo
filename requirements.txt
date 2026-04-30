@@ -3,3 +3,4 @@ djangorestframework
 channels
 channels-redis
 daphne
+whitenoise
