@@ -71,6 +71,7 @@ TEMPLATES = [
 ]
 
 ASGI_APPLICATION = 'gridoo.asgi.application'
+WSGI_APPLICATION = 'gridoo.wsgi.application'
 
 CHANNEL_LAYERS = {
     'default': {
