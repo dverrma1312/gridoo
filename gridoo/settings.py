@@ -74,15 +74,16 @@ TEMPLATES = [
 ASGI_APPLICATION = 'gridoo.asgi.application'
 WSGI_APPLICATION = 'gridoo.wsgi.application'
 
+REDIS_URL = os.environ.get('REDIS_URL', 'redis://127.0.0.1:6379')
+
 CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            'hosts': [('127.0.0.1', 6379)],
+            'hosts': [REDIS_URL],
         },
     },
 }
-
 
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
